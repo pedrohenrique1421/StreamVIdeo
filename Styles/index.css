@@ -13,5 +13,9 @@ body {
     background-color: blueviolet;
     padding: 12px;
     width: 100%;
-    
+}
+
+.playerContainer {
+    border-radius: 10px 100px 10px 100px;
+    background-color: transparent;
 }

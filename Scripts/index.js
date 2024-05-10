@@ -1,4 +1,4 @@
-const listOfVideos = ["ScI7SBxBoLg", "h4xsO1_WYnU"];
+const listOfVideos = ["ScI7SBxBoLg", "h4xsO1_WYnU", "mDf0Jb9bz4Y"];
 // "h4xsO1_WYnU"
 
 // 2. This code loads the IFrame Player API code asynchronously.
@@ -12,16 +12,19 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 //    after the API code downloads.
 let playerWrapper = document.getElementById("playerWrapper");
 
-var player;
+let players = [];
+var player = {};
 function onYouTubeIframeAPIReady() {
     for (let i = 0; i < listOfVideos.length; ) {
-        const newElement = document.createElement("div");
+        const elementChild = document.createElement("div");
 
         const id = String("y1352" + i);
+        const elementclass = "playerContainer";
 
-        newElement.setAttribute("id", id);
+        elementChild.setAttribute("id", id);
+        elementChild.setAttribute("class", elementclass);
 
-        playerWrapper.appendChild(newElement);
+        playerWrapper.appendChild(elementChild);
 
         player = new YT.Player(id, {
             height: "240",
@@ -35,12 +38,14 @@ function onYouTubeIframeAPIReady() {
                 loop: 1, // 1 para repetir o vídeo quando terminar
                 fs: 0, // 0 para ocultar o botão de tela cheia
                 autohe: 0, // 0 para manter os controles visíveis
+                startSeconds: 60,
             },
             events: {
                 onReady: onPlayerReady,
                 onStateChange: onPlayerStateChange,
             },
         });
+        players.push(player);
         i++;
     }
 }
@@ -48,16 +53,6 @@ function onYouTubeIframeAPIReady() {
 if (!playerWrapper) {
     playerWrapper = document.getElementById("playerWrapper");
 }
-
-playerWrapper.addEventListener("mouseenter", () => {
-    console.log("mouse on");
-    playVideoHandle();
-});
-
-playerWrapper.addEventListener("mouseleave", () => {
-    console.log("mouse off");
-    stopVideo();
-});
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
@@ -74,11 +69,29 @@ function onPlayerStateChange(event) {
         done = true;
     }
 }
-function stopVideo() {
-    player.stopVideo();
+function stopVideo(instance) {
+    instance.stopVideo();
 }
 
-function playVideoHandle() {
-    player.mute();
-    player.playVideo();
+function playVideoHandle(instance) {
+    instance.mute();
+    instance.playVideo();
 }
+
+document
+    .getElementById("playerWrapper")
+    .addEventListener("mouseover", function (event) {
+        if (event.target.classList.contains("playerContainer")) {
+            const index = event.target.id;
+            playVideoHandle(players[parseInt(index[index.length - 1])]);
+        }
+    });
+
+document
+    .getElementById("playerWrapper")
+    .addEventListener("mouseout", function (event) {
+        if (event.target.classList.contains("playerContainer")) {
+            const index = event.target.id;
+            stopVideo(players[parseInt(index[index.length - 1])]);
+        }
+    });
