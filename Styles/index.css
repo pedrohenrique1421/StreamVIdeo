@@ -9,7 +9,9 @@ body {
     background-color: #363636;
 }
 
-#playersWrapper {
+#playerWrapper {
     background-color: blueviolet;
     padding: 12px;
+    width: 100%;
+    
 }
