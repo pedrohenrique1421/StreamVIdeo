@@ -1,0 +1,24 @@
+@import url(Root.css);
+
+header {
+    width: 100vw;
+    height: 7vh;
+    background-color: var(--grayB);
+    display: flex;
+    flex-direction: row;
+    padding: 0 12px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    border-bottom: solid 1px var(--blueBsemitransparent);
+}
+
+header img {
+    height: 24px;
+    width: auto;
+}
+
+header img#logo {
+    height: 38px;
+    width: auto;
+}

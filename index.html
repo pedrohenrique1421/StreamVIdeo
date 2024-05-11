@@ -1,17 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vision Vortex</title>
+    <link rel="shortcut icon" href="Media/Imgs/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="Styles/index.css">
+    <link rel="stylesheet" href="Styles/Header.css">
+    <link rel="stylesheet" href="Styles/NavBar.css">
+    <link rel="stylesheet" href="Styles/Article.css">
     <script src="Scripts/index.js" defer></script>
+    <script src="Scripts/GetElements.js"></script>
 </head>
 
 <body>
-    <header></header>
-    <div id="playerWrapper"></div>
+    <header>
+        <img src="Media/Imgs/menuSvg.png" alt="menu icon">
+        <a href="index.html">
+            <img src="Media/Imgs/Logo.png" alt="" id="logo">
+        </a>
+    </header>
+    <section>
+        <aside>
+            <div class="box">
+                <a href="index.html">
+                    <img src="Media/Imgs/NavImgs/HomeIcon.svg" alt="NavIcon">
+                    <h4>Home</h4>
+                </a>
+            </div>
+            <div class="box">
+                <a href="#">
+                    <img src="Media/Imgs/NavImgs/GenereIcon.svg" alt="NavIcon">
+                    <h4>Generos</h4>
+                </a>
+            </div>
+            <span></span>
+            <div class="box">
+                <a href="#">
+                    <img src="Media/Imgs/NavImgs/HistoryIcon.svg" alt="NavIcon">
+                    <h4>Histórico</h4>
+                </a>
+            </div>
+            <div class="box">
+                <a href="#">
+                    <img src="Media/Imgs/NavImgs/PlaylistIcon.svg" alt="NavIcon">
+                    <h4>Playlists</h4>
+                </a>
+            </div>
+            <div class="box">
+                <a href="#">
+                    <img src="Media/Imgs/NavImgs/UploadIcon.svg" alt="NavIcon">
+                    <h4>Uploads</h4>
+                </a>
+            </div>
+            <span></span>
+            <div class="box">
+                <a href="#">
+                    <img src="Media/Imgs/NavImgs/SourceIcon.svg" alt="NavIcon">
+                    <h4>Recusos</h4>
+                </a>
+            </div>
+            <div class="box">
+                <a href="#">
+                    <img src="Media/Imgs/NavImgs/BugIcon.svg" alt="NavIcon">
+                    <h4>Relatar bugs</h4>
+                </a>
+            </div>
+            <div class="box">
+                <a href="#">
+                    <img src="Media/Imgs/NavImgs/FeedbackIcon.svg" alt="NavIcon">
+                    <h4>Feedback</h4>
+                </a>
+            </div>
+            <span></span>
+            <div class="box">
+                <a href="#">
+                    <img src="Media/Imgs/NavImgs/DevIcon.svg" alt="NavIcon" id="abcde">
+                    <h4>Sobre o dev</h4>
+                </a>
+            </div>
+            <span></span>
+            <footer>
+                <p>Copyright© 2024 Pedro H. A. Lins</p>
+            </footer>
+        </aside>
+        <article>
+
+            <div class="searchContainer">
+                <input type="search" name="searchInput" id="searchInput" placeholder="Pesquisar...">
+                <div class="btnSearch" onclick="alert('ainda não fuciono!')">
+                    <img src="Media/Imgs/ArticleImgs/LensGroup.svg" alt="">
+                </div>
+            </div>
+
+            <!-- Importante, Player -->
+            <div id="playerWrapper"></div>
+        </article>
+    </section>
 </body>
 
 </html>

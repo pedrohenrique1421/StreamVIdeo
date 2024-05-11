@@ -5,17 +5,13 @@
 
 body {
     width: 100vw;
-    overflow-x: hidden;
+    overflow: hidden;
     background-color: #363636;
 }
 
-#playerWrapper {
-    background-color: blueviolet;
-    padding: 12px;
-    width: 100%;
-}
-
-.playerContainer {
-    border-radius: 10px 100px 10px 100px;
-    background-color: transparent;
+section {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 93vh;
 }
