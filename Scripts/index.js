@@ -1,6 +1,10 @@
-const listOfVideos = ["ScI7SBxBoLg"];
+const listOfVideos = ["ScI7SBxBoLg", "h4xsO1_WYnU", "mDf0Jb9bz4Y", "HvdWmeGVMEI", "1TkGuFCmFno",
+ "5ceSpqBs2JI", "5ktBK6Lj8Y4", "7ztljolVZi0", "NKeU1twQYX4","5ceSpqBs2JI", "5ktBK6Lj8Y4",
+  "7ztljolVZi0", "NKeU1twQYX4", "5ceSpqBs2JI", "5ktBK6Lj8Y4", "7ztljolVZi0", "NKeU1twQYX4"];
 // , "h4xsO1_WYnU", "mDf0Jb9bz4Y"
-0
+
+
+
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement("script");
 
@@ -18,7 +22,7 @@ function onYouTubeIframeAPIReady() {
     for (let i = 0; i < listOfVideos.length; ) {
         const elementChild = document.createElement("div");
 
-        const id = String("y1352" + i);
+        const id = String(i);
         const elementclass = "playerContainer";
 
         elementChild.setAttribute("id", id);
@@ -32,11 +36,11 @@ function onYouTubeIframeAPIReady() {
             videoId: listOfVideos[i],
             playerVars: {
                 autoplay: 0, // 1 para reproduzir automaticamente
-                controls: 0, // 0 para ocultar os controles do YouTube
-                modestbranding: 1, // 1 para exibir um player sem o logo do YouTube
+                controls: 1, // 0 para ocultar os controles do YouTube
+                modestbranding: 0, // 1 para exibir um player sem o logo do YouTube
                 showinfo: 0, // 0 para ocultar o título e informações do vídeo
                 loop: 1, // 1 para repetir o vídeo quando terminar
-                fs: 0, // 0 para ocultar o botão de tela cheia
+                fs: 1, // 0 para ocultar o botão de tela cheia
                 autohe: 0, // 0 para manter os controles visíveis
                 startSeconds: 60,
             },
@@ -83,7 +87,8 @@ document
     .addEventListener("mouseover", function (event) {
         if (event.target.classList.contains("playerContainer")) {
             const index = event.target.id;
-            playVideoHandle(players[parseInt(index[index.length - 1])]);
+            console.log(index)
+            playVideoHandle(players[parseInt(index)]);
         }
     });
 
@@ -92,6 +97,6 @@ document
     .addEventListener("mouseout", function (event) {
         if (event.target.classList.contains("playerContainer")) {
             const index = event.target.id;
-            stopVideo(players[parseInt(index[index.length - 1])]);
+            stopVideo(players[parseInt(index)]);
         }
     });

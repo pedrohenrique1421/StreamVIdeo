@@ -1,6 +1,5 @@
 @import url(Root.css);
-@import url('https://fonts.googleapis.com/css2?family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 article {
     font-family: "Grenze", serif;
@@ -24,7 +23,6 @@ article .searchContainer {
     gap: 10px;
     justify-content: center;
     align-items: center;
-
 }
 
 article .searchContainer input[type="search"] {
@@ -45,7 +43,7 @@ article .searchContainer input[type="search"] {
 article .searchContainer input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
     appearance: none;
-    background: url('../Media/Imgs/ArticleImgs/cancel-x.svg') no-repeat;
+    background: url("../Media/Imgs/ArticleImgs/cancel-x.svg") no-repeat;
     width: 28px;
     height: 28px;
     transform: scale(0.7);
@@ -76,3 +74,22 @@ article .searchContainer img {
 }
 
 /* #endregion */
+
+.playerContainerA {
+    border-radius: 100px 10px 100px 10px;
+
+}
+
+.playerContainerB {
+    border-radius: 10px 100px 10px 100px;
+}
+
+#playerWrapper {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#playerWrapper .playerContainer{
+    margin: 24px 1.2vw;
+}
