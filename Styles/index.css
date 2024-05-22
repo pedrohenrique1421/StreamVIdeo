@@ -9,9 +9,17 @@ body {
     background-color: #363636;
 }
 
+html{
+    width: 100%;
+}
+
 section {
     display: flex;
     flex-direction: row;
     width: 100vw;
     height: 93vh;
+}
+
+@media (max-width: 1150px){
+
 }

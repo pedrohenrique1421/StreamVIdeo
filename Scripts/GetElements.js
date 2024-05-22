@@ -7,3 +7,14 @@ if (windowy != windowyStorage) {
     windowy = window.scrollY;
     console.log(windowy);
 }
+
+
+
+const mouseOnHandle = ()=>{
+    console.log("Mouse em cima")
+}
+
+const mouseOutHandle = ()=>{
+    console.log("Mouse em fora")
+}
+

@@ -22,3 +22,14 @@ header img#logo {
     height: 38px;
     width: auto;
 }
+
+header img#menu {
+    width: 0;
+}
+
+@media (max-width: 450px) {
+    header img#menu {
+        height: 24px;
+        width: auto;
+    }
+}

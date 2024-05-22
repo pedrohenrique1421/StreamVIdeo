@@ -46,3 +46,21 @@ aside a {
     gap: 15px;
     cursor: progress;
 }
+
+@media (max-width: 1150px){
+    aside h4{
+        font-size: 0;
+    }
+    aside{
+        width: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 450px) {
+    aside, aside .box, aside img, aside footer p{
+        width: 0;
+        font-size: 0;
+    }
+}

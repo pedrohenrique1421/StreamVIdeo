@@ -86,10 +86,42 @@ article .searchContainer img {
 
 #playerWrapper {
     width: 100%;
-    height: 100%;
     overflow-y: scroll;
+    height: 90vh;
 }
 
 #playerWrapper .playerContainer{
     margin: 24px 1.2vw;
+}
+
+@media (max-width: 450px){
+    article{
+        width: 100vw;
+    }
+    #playerWrapper .playerContainer{
+        margin: 24px;
+        width: 360px;
+    }
+
+    #playerWrapper .playerContainer:first-child{
+        margin-top: 2700px;
+    }
+
+    #playerWrapper{
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #playerWrapper::-webkit-scrollbar {
+        width: 0; /* largura da barra de rolagem */
+    }
+
+    article .searchContainer input[type="search"]{
+        width: 80vw;
+    }
 }
